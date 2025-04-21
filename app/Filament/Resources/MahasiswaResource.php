@@ -26,7 +26,8 @@ class MahasiswaResource extends Resource
                 Forms\Components\TextInput::make('nim') -> required()
                     ->label('Nim'),
                 Forms\Components\TextInput::make('nama') -> required() ->label('Nama'),
-                Forms\Components\Select::make('jurusan.nama') -> label('Jurusan') -> relationship('jurusan','nama') ->required(),
+                //jurusan_id tuh isi dari tabel mahasiswa, sedangkan jurusan itu relasi ke model jurusan dan mengambil nama dari tabel jurusan
+                Forms\Components\Select::make('jurusan_id') -> label('Jurusan') -> relationship('jurusan','nama') ->required(),
             ]);
     }
 
@@ -34,9 +35,10 @@ class MahasiswaResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('nim'),
-                Tables\Columns\TextColumn::make('nama'),
-                Tables\Columns\TextColumn::make('jurusan.nama'),
+                Tables\Columns\TextColumn::make('nim')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('nama')->searchable()->sortable(),
+                //jurusan.nama untuk mengambil nama pada tabel jurusan
+                Tables\Columns\TextColumn::make('jurusan.nama')->searchable()->sortable(),
             ])
             ->filters([
                 //
@@ -61,7 +63,7 @@ class MahasiswaResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListMahasiswas::route('/'),
+            'index' => Pages\ListMahasiswa::route('/'),
             'create' => Pages\CreateMahasiswa::route('/create'),
             'edit' => Pages\EditMahasiswa::route('/{record}/edit'),
         ];

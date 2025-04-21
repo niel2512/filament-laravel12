@@ -32,7 +32,7 @@ class JurusanResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('nama'),
+                Tables\Columns\TextColumn::make('nama')->label('Jurusan')->searchable()->sortable(),
             ])
             ->filters([
                 //
