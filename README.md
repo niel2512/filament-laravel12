@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://laravel.com/img/logomark.min.svg" alt="Laravel" height="70">
-  <img src="https://github.com/filamentphp/filament/assets/41773797/8d5a0b12-4643-4b5c-964a-56f0db91b90a" alt="Filament" height="70">
+  <a href="https://laravel.com<img src="https://laravel.com/img/logomark.min.svg" alt="Laravel" height="70"></a>
+  <a href="https://filamentphp.com"<img src="https://github.com/filamentphp/filament/assets/41773797/8d5a0b12-4643-4b5c-964a-56f0db91b90a" alt="Filament" height="70"></a>
 </p>
 <p align="center">
-<a href="https://laravel.com"><img alt="Laravel v12.x" src="https://img.shields.io/badge/Laravel-v12.x-FF2D20?style=for-the-badge&logo=laravel"></a>
-    <a href="https://filamentphp.com"><img alt="Filament v3.x" src="https://img.shields.io/badge/Filament-v3.x-FFE585?style=for-the-badge"></a>
+  <a href="https://laravel.com"><img alt="Laravel v12.x" src="https://img.shields.io/badge/Laravel-v12.x-FF2D20?style=for-the-badge&logo=laravel"></a>
+  <a href="https://filamentphp.com"><img alt="Filament v3.x" src="https://img.shields.io/badge/Filament-v3.x-FFE585?style=for-the-badge"></a>
 </p>
 
 # Filament Laravel 12 CRUD
