@@ -19,6 +19,8 @@ class JurusanResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
 
+    protected static ?string $navigationGroup = 'Kuliah';
+
     public static function form(Form $form): Form
     {
         return $form
