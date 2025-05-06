@@ -31,7 +31,7 @@ class TransactionResource extends Resource
                 Forms\Components\Select::make('category_id')
                     ->relationship('category', 'name')
                     ->required(),
-                Forms\Components\DatePicker::make('date')
+                Forms\Components\DatePicker::make('date_transaction')
                     ->required(),
                 Forms\Components\TextInput::make('amount')
                     ->prefix('Rp')
@@ -68,7 +68,7 @@ class TransactionResource extends Resource
                 Tables\Columns\TextColumn::make('notes')
                 ->label('Keterangan')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('date')
+                Tables\Columns\TextColumn::make('date_transaction')
                     ->date()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('amount')
