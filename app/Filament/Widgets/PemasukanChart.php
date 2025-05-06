@@ -4,8 +4,10 @@ namespace App\Filament\Widgets;
 
 use App\Models\Transaction;
 use Filament\Widgets\ChartWidget;
+use Filament\Widgets\Concerns\InteractsWithPageFilters;
 use Flowframe\Trend\Trend;
 use Flowframe\Trend\TrendValue;
+use Illuminate\Support\Carbon;
 
 class PemasukanChart extends ChartWidget
 {
@@ -13,12 +15,22 @@ class PemasukanChart extends ChartWidget
 
     protected static string $color = 'success';
 
+    use InteractsWithPageFilters; //untuk mengakses filter yang ada di dashboard
+
     protected function getData(): array
     {
-        $data = Trend::query(Transaction::incomes())
+        $startDate = ! is_null($this->filters['startDate'] ?? null) ?
+            Carbon::parse($this->filters['startDate']) :
+            null;
+
+        $endDate = ! is_null($this->filters['endDate'] ?? null) ?
+            Carbon::parse($this->filters['endDate']) :
+            now();
+
+        $data = Trend::query(Transaction::Incomes())
                 ->between(
-                    start: now()->startOfYear(),
-                    end: now()->endOfYear(),
+                    start: $startDate,
+                    end: $endDate,
                 )
                 ->perDay()
                 ->sum('amount');
